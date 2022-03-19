@@ -136,10 +136,11 @@ def adoption(request):
         category = request.POST.get('category')
         age = request.POST.get('age')        
         email = request.POST.get('email')
-        subject = request.POST.get('subject')
+        message = request.POST.get('message')
         number = request.POST.get('number')
+        image = request.POST.get('image')
 
-        adoption = ContactUS(name=name, gender=gender, category=category, age=age, email=email,   number=number, subject=subject,) 
+        adoption = ContactUS(name=name, gender=gender, category=category, age=age, email=email,   number=number, message=message, image=image,) 
 
         adoption.save()
         messages.success(request, 'Your form has been submitted!')
