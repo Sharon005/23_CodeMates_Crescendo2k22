@@ -276,40 +276,54 @@
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                             <div class="h-100 d-flex flex-column justify-content-center p-5">
                                 <h1 class="mb-4">Register your pet </h1>
-                                <form>
+                                <form id="contact" method="post" action="{% url 'Web_App:adoption' %}">
+                                    {% csrf_token %}
+
                                     <div class="row g-3">
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="gname" placeholder="Gurdian Name">
-                                                <label for="gname">Name</label>
+                                                <input name="name" type="text" id="name" class="form-control border-0" placeholder="Pet's Name">
+                                                <label >Name</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="email" class="form-control border-0" id="gmail" placeholder="Gurdian Email">
-                                                <label for="gmail">Gender</label>
+                                                <input name="gender" type="text" id="gender" class="form-control border-0" id="gmail" placeholder="Gender">
+                                                <label >Gender</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cname" placeholder="Child Name">
-                                                <label for="cname">Category</label>
+                                                <input name="category" type="text" class="form-control border-0" id="category" placeholder="Child Name">
+                                                <label >Category</label>
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-floating">
-                                                <input type="text" class="form-control border-0" id="cage" placeholder="Child Age">
-                                                <label for="cage">Age</label>
+                                                <input name="age" type="number" id="age" class="form-control border-0" placeholder="Child Age">
+                                                <label>Age</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input name="email" type="email" id="email" class="form-control border-0" placeholder="Email">
+                                                <label>Email</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-floating">
+                                                <input name="number" type="number" id="number" class="form-control border-0" placeholder="Phone No">
+                                                <label>Phone No</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <textarea class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                                <label for="message">Information</label>
+                                                <textarea name="message" type="text" class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                                <label >Information</label>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                                            <button class="btn btn-primary w-100 py-3" type="submit" value="submit" id="form-submit">Submit</button>
                                         </div>
                                     </div>
                                 </form>

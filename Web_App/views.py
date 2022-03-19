@@ -130,6 +130,19 @@ def home(request):
     return render(request, 'Web_App/index.html')
 
 def adoption(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        gender = request.POST.get('gender')
+        category = request.POST.get('category')
+        age = request.POST.get('age')        
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        number = request.POST.get('number')
+
+        adoption = ContactUS(name=name, gender=gender, category=category, age=age, email=email,   number=number, subject=subject,) 
+
+        adoption.save()
+        messages.success(request, 'Your form has been submitted!')
     return render(request, 'Web_App/adoption.html')
 
 def contact(request):
