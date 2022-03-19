@@ -1,0 +1,47 @@
+{% extends 'Web_App/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="meeting-single-item">
+        <div class="thumb">
+          <img class="thumbnail"  src="{{ animal.imageURL }}" style="height: 200px; padding-left: 10cm; " ></a>
+        </div>
+        <br>
+        <div class="down-content">
+          <h1 style="text-align: center;" >Pet's Name: {{ animal.name }}</h1><br><br><br>
+          <p style="font-size: large;" class="description"><h3>Description:</h3>  {{ animal.desc }}
+          </p>
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="hours">
+                <h3>Age:</h3>
+                <p>{{ animal.age }}</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="hours">
+                <h3>Gender:</h3>
+                <p>{{ animal.gender }}</p>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="hours">
+                <h3>Contact Info:</h3>
+                <p>{{ animal.email }}</p>
+                <p>{{ animal.number }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+
+
+{% endblock content %}

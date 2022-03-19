@@ -1,0 +1,65 @@
+{% extends 'Web_App/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- Page Header End -->
+<div class="container-xxl py-5 page-header position-relative mb-5">
+  <div class="container py-5">
+      <h1  class="display-2 text-white animated slideInDown mb-4">Adoption</h1>
+      <nav aria-label="breadcrumb animated slideInDown"></nav>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Classes Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+      <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+          <h1 class="mb-3">Adopt Us</h1>
+          <p>Look for the Hope for Paws logo to find animals rescued by our team</p>
+      </div>
+      <div class="row g-4">
+        {% for animal in animal_list %}
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="classes-item">
+                  <div class="bg-light rounded-circle w-95 mx-auto p-2">
+                      <img class="img-fluid rounded-circle" src="{{ animal.imageURL}}" alt="">
+                  </div>
+                  <div class="bg-light rounded p-4 pt-5 mt-n5">
+                      <a class="d-block text-center h3 mt-3 mb-4" href="{{animal.slug}} ">{{ animal.name }} </a>
+                      <div class="row g-1">
+                          <div class="col-4">
+                              <div class="border-top border-3 border-primary pt-2">
+                                  <h6 class="text-primary mb-1">Age:</h6>
+                                  <small>{{animal.age}} </small>
+                              </div>
+                          </div>
+                          <div class="col-4">
+                              <div class="border-top border-3 border-success pt-2">
+                                  <h6 class="text-success mb-1">Gender:</h6>
+                                  <small>{{animal.gender}} </small>
+                              </div>
+                          </div>
+                          <div class="col-4">
+                              <div class="border-top border-3 border-warning pt-2">
+                                  <h6 class="text-warning mb-1">Category:</h6>
+                                  <small>{{ animal.category}} </small>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+          
+      </div>
+
+      
+  </div>
+</div>
+<!-- Classes End -->
+
+
+{% endblock content %}

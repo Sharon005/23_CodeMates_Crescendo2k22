@@ -13,6 +13,7 @@ from django.utils.encoding import force_bytes, force_text
 from django.contrib.auth import authenticate, login, logout
 from . tokens import generate_token
 from django.contrib import messages
+from django.views.generic import ListView, DetailView
 
 import requests
 
@@ -152,3 +153,7 @@ def contact(request):
 def about(request):
     return render(request, 'Web_App/about.html')
 
+class AnimalDView(ListView):
+    model = Animal
+class AnimalView(DetailView):
+    model = Animal

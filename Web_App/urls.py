@@ -14,5 +14,8 @@ urlpatterns = [
     path('adoption', views.adoption, name="adoption"),
     path('contact', views.contact, name="contact"),
     path('about', views.about, name="about"),  
+
+    url(r'^animals/$', views.AnimalDView.as_view(), name='animal'),
+    url(r'^animals/(?P<slug>[A-Za-z0-9_-]+)/$', views.AnimalView.as_view(), name='animal_desc'),
     
 ]
