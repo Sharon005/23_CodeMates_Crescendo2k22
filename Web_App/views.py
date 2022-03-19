@@ -129,3 +129,12 @@ def signout(request):
 def home(request):
     return render(request, 'Web_App/index.html')
 
+def adoption(request):
+    return render(request, 'Web_App/adoption.html')
+
+def contact(request):
+    return render(request, 'Web_App/contact.html')
+
+def about(request):
+    return render(request, 'Web_App/about.html')
+
