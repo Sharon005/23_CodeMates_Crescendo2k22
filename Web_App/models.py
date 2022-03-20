@@ -36,3 +36,12 @@ class Animal(models.Model):
         except:
             url = ''
         return url
+
+
+class Donation(models.Model):
+    name  = models.CharField(max_length=100, null=True)
+    payment_id  = models.CharField(max_length=100, null=True)
+    amount = models.IntegerField()
+
+    def __str__(self):
+        return self.name

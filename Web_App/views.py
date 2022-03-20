@@ -16,6 +16,8 @@ from django.contrib import messages
 from django.views.generic import ListView, DetailView
 
 import requests
+import razorpay
+
 
 # Create your views here.
 def signup(request):
@@ -150,8 +152,31 @@ def adoption(request):
 def contact(request):
     return render(request, 'Web_App/contact.html')
 
+def volunteer(request):
+    return render(request, 'Web_App/volunteer.html')
+
 def about(request):
     return render(request, 'Web_App/about.html')
+
+def donate(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        amount =int(request.POST.get('amount')) * 100
+        client = razorpay.Client(auth=("rzp_test_AxURQBuiniLW0d", "vnLaw5wW0Hs9EP7B7BZAg65C"))
+        payment = client.order.create({'amount':amount, 'currency':'INR', 'payment_capture':'1'})
+        print(payment)
+        donation = Donation(name=name, amount=amount, payment_id=payment['id'])
+        donation.save()
+        return render(request, 'Web_App/donate.html', {'payment': payment})
+
+
+    return render(request, 'Web_App/donate.html')
+
+def success(request):
+    if request.method == "POST":
+        a = request.POST
+        print(a)
+    return render(request, 'Web_App/success.html')
 
 class AnimalDView(ListView):
     model = Animal
