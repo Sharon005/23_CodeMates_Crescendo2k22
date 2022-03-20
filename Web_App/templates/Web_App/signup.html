@@ -7,10 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'CSS/signup.css' %}">
     <title>Sign Up</title>
+    <style>
+        .body{
+            height: 100vh;
+        }
+    </style>
 </head>
-<body style="padding-top: 50px;   ">
+<body style="padding-top: 100px; height: 100vh;">
     <center>
-    <div class="back" style="height: 50%; width: 30%; background-color: rgb(74, 175, 221); padding-top: 1px;" >
+    <div class="back" style="height: 60%; width: 40%; background-color: rgb(74, 175, 221); padding-top: 1px; border-radius: 10px;" >
     {% for message in messages %}
     <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
         <strong>Message:</strong> {{ message }}

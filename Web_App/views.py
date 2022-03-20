@@ -158,6 +158,7 @@ def volunteer(request):
 def about(request):
     return render(request, 'Web_App/about.html')
 
+<<<<<<< HEAD
 def donate(request):
     if request.method == "POST":
         name = request.POST.get('name')
@@ -177,6 +178,10 @@ def success(request):
         a = request.POST
         print(a)
     return render(request, 'Web_App/success.html')
+=======
+def register(request):
+    return render(request, 'Web_App/register.html')
+>>>>>>> 46c88e96d00d51822270b937efc35f009bb0999d
 
 class AnimalDView(ListView):
     model = Animal

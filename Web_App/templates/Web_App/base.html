@@ -55,13 +55,12 @@
                 <div class="navbar-nav mx-auto">
                     <a href="{% url 'Web_App:home' %}" class="nav-item nav-link active">Home</a>
                     <a href="{% url 'Web_App:about' %}" class="nav-item nav-link">About Us</a>
-                    <a href="{% url 'Web_App:animal' %}" class="nav-item nav-link">Adoption</a>
 
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Adoption</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
                             <a href="{% url 'Web_App:animal' %}" class="dropdown-item">Adopt</a>
-                            <a href="team.html" class="dropdown-item">Popular Teachers</a>
+                            <a href="{% url 'Web_App:register' %}" class="dropdown-item">Register</a>
                         </div>
                     </div> 
                     
