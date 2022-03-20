@@ -153,6 +153,9 @@ def contact(request):
 def about(request):
     return render(request, 'Web_App/about.html')
 
+def register(request):
+    return render(request, 'Web_App/register.html')
+
 class AnimalDView(ListView):
     model = Animal
 class AnimalView(DetailView):

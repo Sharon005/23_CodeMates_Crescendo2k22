@@ -1,0 +1,83 @@
+{% extends 'Web_App/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="bg-light rounded">
+            <div class="row g-0">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="h-100 d-flex flex-column justify-content-center p-5">
+                        <h1 class="mb-4">Register your pet </h1>
+                        <form id="contact" method="post" action="{% url 'Web_App:adoption' %}">
+                            {% csrf_token %}
+
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input name="name" type="text" id="name" class="form-control border-0" placeholder="Pet's Name">
+                                        <label >Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input name="gender" type="text" id="gender" class="form-control border-0" id="gmail" placeholder="Gender">
+                                        <label >Gender</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input name="category" type="text" class="form-control border-0" id="category" placeholder="Child Name">
+                                        <label >Category</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input name="age" type="number" id="age" class="form-control border-0" placeholder="Child Age">
+                                        <label>Age</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input name="email" type="email" id="email" class="form-control border-0" placeholder="Email">
+                                        <label>Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input name="number" type="number" id="number" class="form-control border-0" placeholder="Phone No">
+                                        <label>Phone No</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea name="message" type="text" class="form-control border-0" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                        <label >Information</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <input name="image" type="file" id="image" class="form-control border-0" placeholder="Image">
+                                        <label >Image</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit" value="submit" id="form-submit">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded" src="{% static 'images/appointment.jpg' %}" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
